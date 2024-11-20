@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dr. Sonali's Ayurveda Wellness</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #4a7c59;
+            --secondary-color: #7bc074;
+            --accent-color: #f4d03f;
+            --background-color: #f4f0e6;
+            --text-color: #333;
+            --hover-color: #5d9e70;
+        }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--background-color);
+        }
+        header {
+            background-color: var(--primary-color);
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+            position: relative;
+            overflow: hidden;
+        }
+        .logo {
+            max-width: 300px;
+            margin: 20px 0;
+            filter: drop-shadow(2px 2px 4px rgba(0,0,0,0.3));
+        }
+        .header-content p {
+            font-size: 1.2rem;
+            margin-top: 10px;
+            color: #f4f0e6;
+        }
+        nav {
+            background-color: var(--secondary-color);
+            padding: 15px 0;
+            text-align: center;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+            font-weight: bold;
+            position: relative;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+        }
+        nav a i {
+            margin-right: 8px;
+            opacity: 0.7;
+            transition: opacity 0.3s ease;
+        }
+        nav a:hover {
+            color: var(--accent-color);
+        }
+        nav a:hover i {
+            opacity: 1;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .section {
+            background-color: white;
+            margin: 30px 0;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+        .section:hover {
+            transform: translateY(-10px);
+        }
+        .section h2 {
+            color: var(--primary-color);
+            border-bottom: 3px solid var(--secondary-color);
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        .section h2 i {
+            margin-right: 15px;
+            color: var(--secondary-color);
+        }
+        .section ul {
+            list-style-type: none;
+        }
+        .section li {
+            margin-bottom: 15px;
+            padding: 10px;
+            background-color: #f9f9f9;
+            border-radius: 5px;
+            transition: all 0.3s ease;
+        }
+        .section li:hover {
+            background-color: #f0f0f0;
+            transform: translateX(10px);
+        }
+        .section li i {
+            margin-right: 10px;
+            color: var(--secondary-color);
+        }
+        footer {
+            background-color: var(--primary-color);
+            color: white;
+            text-align: center;
+            padding: 20px;
+            position: relative;
+        }
+        footer p {
+            margin: 10px 0;
+        }
+        footer button {
+            padding: 10px 20px;
+            background-color: var(--accent-color);
+            color: var(--text-color);
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        footer button:hover {
+            background-color: var(--hover-color);
+            color: white;
+        }
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0, 0, 0, 0.5);
+        }
+        .modal-content {
+            background-color: white;
+            margin: 15% auto;
+            padding: 20px;
+            border-radius: 10px;
+            width: 80%;
+            max-width: 500px;
+        }
+        .modal-content form {
+            display: flex;
+            flex-direction: column;
+        }
+        .modal-content input, 
+        .modal-content textarea {
+            margin-bottom: 15px;
+            padding: 10px;
+            border: 1px solid var(--secondary-color);
+            border-radius: 5px;
+        }
+        .modal-content button {
+            padding: 10px;
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 150" width="300" height="150" class="logo">
+                <defs>
+                    <linearGradient id="lotus-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                        <stop offset="0%" style="stop-color:#4a7c59;stop-opacity:0.9" />
+                        <stop offset="100%" style="stop-color:#7bc074;stop-opacity:0.7" />
+                    </linearGradient>
+                </defs>
+                
+                <g transform="translate(50, 20)">
+                    <path d="M100 50 Q150 10, 200 50 T300 50" 
+                          fill="none" 
+                          stroke="url(#lotus-gradient)" 
+                          stroke-width="4" 
+                          transform="rotate(-30, 200, 50)"/>
+                    <path d="M100 50 Q150 10, 200 50 T300 50" 
+                          fill="none" 
+                          stroke="url(#lotus-gradient)" 
+                          stroke-width="4" 
+                          transform="rotate(30, 200, 50)"/>
+                    
+                    <circle cx="200" cy="50" r="20" fill="#f4d03f" opacity="0.8"/>
+                    
+                    <text x="0" y="120" font-family="Segoe UI, sans-serif" font-size="24" font-weight="bold" fill="#4a7c59">
+                        Dr. Sonali's
+                    </text>
+                    <text x="0" y="145" font-family="Segoe UI, sans-serif" font-size="18" fill="#7bc074">
+                        Ayurveda Wellness
+                    </text>
+                </g>
+            </svg>
+            <p>Your Journey to Holistic Health Begins Here</p>
+        </div>
+    </header>
+
+    <nav>
+        <a href="#ayurvedic-tips"><i class="fas fa-spa"></i>Ayurvedic Tips</a>
+        <a href="#skin-care"><i class="fas fa-heart"></i>Skin Care</a>
+        <a href="#hair-care"><i class="fas fa-leaf"></i>Hair Care</a>
+        <a href="#baby-care"><i class="fas fa-baby"></i>Baby Care</a>
+        <a href="#baby-food"><i class="fas fa-apple-alt"></i>Baby Food</a>
+    </nav>
+
+    <div class="container">
+        <section id="ayurvedic-tips" class="section">
+            <h2><i class="fas fa-book-medical"></i> Ayurvedic Tips</h2>
+            <ul>
+                <li><i class="fas fa-pepper-hot"></i> <b>Herbal Boost:</b> Include turmeric and ginger in your diet for immunity.</li>
+                <li><i class="fas fa-clock"></i> <b>Routine Balance:</b> Follow Ayurveda's Dinacharya for energy and focus.</li>
+            </ul>
+        </section>
+
+        <section id="skin-care" class="section">
+            <h2><i class="fas fa-palette"></i> Skin Care</h2>
+            <ul>
+                <li><i class="fas fa-magic"></i> <b>Natural Masks:</b> Use aloe vera and turmeric for glowing skin.</li>
+                <li><i class="fas fa-tint"></i> <b>Hydration:</b> Apply rose water daily to keep your skin fresh.</li>
+            </ul>
+        </section>
+
+        <section id="hair-care" class="section">
+            <h2><i class="fas fa-cut"></i> Hair Care</h2>
+            <ul>
+                <li><i class="fas fa-hand-holding-heart"></i> <b>Strength:</b> Massage your scalp with coconut oil twice weekly.</li>
+                <li><i class="fas fa-tree"></i> <b>Growth:</b> Include amla in your diet for strong, healthy hair.</li>
+            </ul>
+        </section>
+
+        <section id="baby-care" class="section">
+            <h2><i class="fas fa-baby"></i> Baby Care</h2>
+            <ul>
+                <li><i class="fas fa-hand-peace"></i> <b>Gentle Touch:</b> Massage with almond oil for relaxation and growth.</li>
+                <li><i class="fas fa-first-aid"></i> <b>Natural Remedies:</b> Use neem leaves for minor rashes.</li>
+            </ul>
+        </section>
+
+        <section id="baby-food" class="section">
+            <h2><i class="fas fa-utensils"></i> Baby Food</h2>
+            <ul>
+                <li><i class="fas fa-carrot"></i> <b>Nutrition:</b> Start with steamed fruits and mashed vegetables.</li>
+                <li><i class="fas fa-seedling"></i> <b>Wholesome:</b> Introduce moong dal for protein-rich baby food.</li>
+            </ul>
+        </section>
+    </div>
+
+    <footer>
+        <p>© 2024 Dr. Sonali's Ayurveda Wellness. All Rights Reserved.</p>
+        <button id="consultButton">Book Consultation</button>
+    </footer>
+
+    <div id="consultModal" class="modal">
+        <div class="modal-content">
+            <h2>Book a Consultation</h2>
+            <form>
+                <input type="text" placeholder="Your Name" required>
+                <input type="email" placeholder="Your Email" required>
+                <textarea placeholder="Your Message" required></textarea>
+                <button type="submit">Send</button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        const modal = document.getElementById('consultModal');
+        const consultButton = document.getElementById('consultButton');
+
+        consultButton.addEventListener('click', () => {
+            modal.style.display = 'block';
+        });
+
+        window.addEventListener('click', (e) => {
+            if (e.target === modal) {
+                modal.style.display = 'none';
+            }
+        });
+    </script>
+</body>
+</html>
